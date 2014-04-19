@@ -46,9 +46,14 @@ var app = {
         var receivedElement = parentElement.querySelector('.received');
 
         listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+        //receivedElement.setAttribute('style', 'display:block;');
+		receivedElement.setAttribute('style', 'display:none;');
 
+		
         console.log('Received Event: ' + id);
+		
+		
+		scan();
     },
 
     scan: function() {
@@ -63,11 +68,25 @@ var app = {
             "Format: " + result.format + "\n" + 
             "Cancelled: " + result.cancelled);  
 
-           console.log("Scanner result: \n" +
+			
+			console.log("Scanner result: \n" +
                 "text: " + result.text + "\n" +
                 "format: " + result.format + "\n" +
                 "cancelled: " + result.cancelled + "\n");
+				
+				
+			if (result.cancelled == 'false')
+			{			
+				alert("JOHACK: " + result.text);
+			}
+			else
+			{
+				alert("cancelled.");
+			}
+			
+           
             document.getElementById("info").innerHTML = result.text;
+			
             console.log(result);
             /*
             if (args.format == "QR_CODE") {
