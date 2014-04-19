@@ -77,7 +77,7 @@ var app = {
                 "cancelled: " + result.cancelled + "\n");
 				
 				
-			if (result.cancelled == 'false')
+			if (result.cancelled == "false")
 			{			
 				alert("JOHACK: " + result.text);
 			}
