@@ -53,10 +53,12 @@ var app = {
         console.log('Received Event: ' + id);
 		
 		
-		scan();
+		this.scan();
     },
 
     scan: function() {
+		alert("IN SCANNER");
+		
         console.log('scanning');
         
         var scanner = cordova.require("cordova/plugin/BarcodeScanner");
